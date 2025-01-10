@@ -3,7 +3,7 @@
 
 const InputStyle = {
     input: {
-        fontSize: 15,
+        fontSize: 17,
         color: '#888D83',
         borderWidth: 1,
         borderColor: '#888D83',

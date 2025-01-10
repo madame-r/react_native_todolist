@@ -18,17 +18,17 @@ const Input = ({ onAddItem }) => {
 
     return (
         <View>
-            {/* Champ de saisie */}
+
             <TextInput
                 style={InputStyle.input}
-                placeholder="Quoi acheter ?"
+                placeholder="What's next ?"
                 value={text}
                 onChangeText={(value) => setText(value)}
             />
 
 
             <TouchableOpacity style={InputStyle.button} onPress={handleAdd}>
-                <Text style={InputStyle.buttonText}>AJOUTER</Text>
+                <Text style={InputStyle.buttonText}>ADD</Text>
             </TouchableOpacity>
         </View>
     );
