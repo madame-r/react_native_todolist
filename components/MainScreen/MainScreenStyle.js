@@ -1,4 +1,4 @@
-const AppStyle = {
+const MainScreenStyle = {
     main: {
         flex: 1,
     },
@@ -73,4 +73,4 @@ const AppStyle = {
 };
 
 
-export { AppStyle };
+export { MainScreenStyle };

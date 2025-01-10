@@ -1,7 +1,7 @@
 
 # To Do List
 
-This mobile app  done with React native, allows users to create, view, and manage tasks or items. This app is commonly used on a mobile device for task organization and helps users stay productive.
+This mobile app  done with React Native, allows users to create, view, and manage tasks or items. This app is commonly used on a mobile device for task organization and helps users stay productive.
 
 
 ## Educational Purpose
