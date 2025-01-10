@@ -3,14 +3,14 @@ import { View, Text, FlatList, ImageBackground, TouchableOpacity } from 'react-n
 import { TasksContext } from '../../contexts/TasksContext';
 import { MainScreenStyle } from './MainScreenStyle';
 import Input from '../Input/Input';
-import imgHeader from '../../assets/img/img_header.jpg';
+
 
 const MainScreen = () => {
     const { tasks, addTask, deleteTask, clearAllTasks } = useContext(TasksContext);
 
     return (
         <View style={MainScreenStyle.main}>
-            <ImageBackground source={imgHeader} style={MainScreenStyle.img_header} />
+            <ImageBackground source={require('../../assets/img/img_header.jpg')} style={MainScreenStyle.img_header} />
             <View style={MainScreenStyle.container}>
                 <Text style={MainScreenStyle.titre}>TO DO LIST</Text>
                 <Input onAddItem={addTask} />
