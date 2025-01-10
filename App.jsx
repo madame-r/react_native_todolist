@@ -1,7 +1,6 @@
-// Raccourci : rnfc
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, ImageBackground, TouchableOpacity } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage'; // Importation d'AsyncStorage
 import { AppStyle } from './AppStyle';
 import Input from './components/Input/Input';
 import imgHeader from './assets/img/img_header.jpg';
@@ -9,15 +8,65 @@ import imgHeader from './assets/img/img_header.jpg';
 const App = () => {
     const [tasks, setTasks] = useState([]);
 
-    // Ajouter un item à la liste
-    const handleAddItem = (item) => {
-        setTasks([...tasks, { id: Date.now().toString(), text: item }]);
+
+    // Charger les tâches depuis AsyncStorage au démarrage
+    useEffect(() => {
+        const loadTasks = async () => {
+            try {
+                const savedTasks = await AsyncStorage.getItem('tasks');
+                if (savedTasks) {
+                    setTasks(JSON.parse(savedTasks));
+                }
+            } catch (error) {
+                console.error('Erreur lors du chargement des tâches :', error);
+            }
+        };
+        loadTasks();
+    }, []);
+
+
+
+
+    // Sauvegarder les tâches dans AsyncStorage
+    const saveTasks = async (updatedTasks) => {
+        try {
+            await AsyncStorage.setItem('tasks', JSON.stringify(updatedTasks));
+        } catch (error) {
+            console.error('Erreur lors de la sauvegarde des tâches :', error);
+        }
     };
 
-    // Supprimer un item de la liste
-    const handleDeleteItem = (id) => {
-        setTasks(tasks.filter((task) => task.id !== id));
+
+
+    // Ajouter une tâche
+    const handleAddItem = (item) => {
+        const newTasks = [...tasks, { id: Date.now().toString(), text: item }];
+        setTasks(newTasks);
+        saveTasks(newTasks); // Sauvegarde après ajout
     };
+
+
+
+    // Supprimer une tâche
+    const handleDeleteItem = (id) => {
+        const filteredTasks = tasks.filter((task) => task.id !== id);
+        setTasks(filteredTasks);
+        saveTasks(filteredTasks); // Sauvegarde après suppression
+    };
+
+
+    // Tout supprimer
+    const clearAllTasks = async () => {
+        try {
+            await AsyncStorage.removeItem('tasks');
+            setTasks([]);
+        } catch (error) {
+            console.error('Erreur lors de la suppression de toutes les tâches :', error);
+        }
+    };
+
+
+
 
     return (
         <View style={AppStyle.main}>
@@ -41,6 +90,15 @@ const App = () => {
                     )}
                 />
             </View>
+
+
+            <View style={AppStyle.clearAllContainer}>
+                <TouchableOpacity  onPress={()=> clearAllTasks()}  style={AppStyle.clearAllButton}>
+                    <Text style={AppStyle.clearAllText}>CLEAR ALL</Text>
+                </TouchableOpacity>
+            </View>
+
+
         </View>
     );
 };

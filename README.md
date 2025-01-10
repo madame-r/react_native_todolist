@@ -1,14 +1,16 @@
 
 # To Do List
 
-This mobile app  allows users to create, view, and manage tasks or items. This app is commonly used on a mobile device for task organization and helps users stay productive.
+This mobile app  done with React native, allows users to create, view, and manage tasks or items. This app is commonly used on a mobile device for task organization and helps users stay productive.
 
 
 ## Educational Purpose
 
 - Adding new tasks
 - Viewing a list of tasks
+- Storing the tasks
 - Deleting tasks that are no longer needed
+- Clearing all the tasks at once
 
 
 
@@ -24,7 +26,7 @@ Hi everyone, I'm Madame R. a Web Developer from France.
 Currently in training, I'm a database enthusiast.
 Enjoy your stay, have a look at my other repositories and let's get in touch if you wish to work with me.
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 **Database:** MySQL Workbench, Doctrine
 

@@ -51,6 +51,24 @@ const AppStyle = {
         fontWeight: 'bold',
         fontSize: 15,
     },
+    clearAllContainer: {
+        marginBottom: 30,
+    },
+    clearAllButton: {
+        backgroundColor: '#760B07',
+        padding: 10,
+        borderRadius: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 10,
+        width:150,
+        alignSelf:'center',
+    },
+    clearAllText: {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 18,
+    },
 
 };
 
