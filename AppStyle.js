@@ -1,9 +1,19 @@
 const AppStyle = {
-    titre : {
-        margin:30,
-        color: '#ff0000',
-        fontWeight:'900',
-        fontSize:30,
+    main: {
+        flex: 1,
+    },
+
+    img_header: {
+        width: '100%',
+        height: 300,
+    },
+
+    titre: {
+        margin: 10,
+        color: '#888D83',
+        fontWeight: '900',
+        fontSize: 30,
+        textAlign: 'center',
     },
 
     container: {
@@ -11,12 +21,38 @@ const AppStyle = {
         padding: 20,
         backgroundColor: '#f5f5f5',
     },
-    task: {
-        padding: 10,
-        marginVertical: 5,
-        backgroundColor: '#e0e0e0',
-        borderRadius: 5,
+
+    taskContainer: {
+        flexDirection: 'row',  // Pour disposer le texte et la croix horizontalement
+        justifyContent: 'space-between',  // Espacement entre le texte et la croix
+        alignItems: 'center',  // Centrer verticalement
+        marginVertical: 10,  // Ajouter un peu d'espace entre les items
     },
+
+    task: {
+        flex: 0.9,  // Réduit la largeur de la tâche (au lieu de 'flex: 1', on lui donne moins d'espace)
+        padding: 10,
+        backgroundColor: '#DDD9B3',
+        borderRadius: 5,
+        fontSize: 16,
+    },
+
+    deleteButton: {
+        backgroundColor: '#888D83',
+        borderRadius: 50,
+        marginLeft: 10,
+        height: 30,
+        width: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    deleteText: {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 15,
+    },
+
 };
 
-export {AppStyle};
+
+export { AppStyle };

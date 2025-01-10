@@ -2,9 +2,8 @@
 // Ref Input : https://reactnative.dev/docs/textinput
 
 import React, { useState } from 'react';
-import { View, TextInput, Button } from 'react-native';
+import { View, TextInput, Text, TouchableOpacity } from 'react-native';
 import { InputStyle } from './InputStyle';
-
 
 const Input = ({ onAddItem }) => {
 
@@ -17,15 +16,22 @@ const Input = ({ onAddItem }) => {
         }
     };
 
-
     return (
         <View>
-            <TextInput style={InputStyle.input} placeholder="Quoi acheter ?" value={text} onChangeText={(value) => setText(value)} />
-            <Button title="Ajouter" onPress={handleAdd}/>
+            {/* Champ de saisie */}
+            <TextInput
+                style={InputStyle.input}
+                placeholder="Quoi acheter ?"
+                value={text}
+                onChangeText={(value) => setText(value)}
+            />
+
+
+            <TouchableOpacity style={InputStyle.button} onPress={handleAdd}>
+                <Text style={InputStyle.buttonText}>AJOUTER</Text>
+            </TouchableOpacity>
         </View>
     );
 };
-
-
 
 export default Input;
