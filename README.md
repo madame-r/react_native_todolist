@@ -14,10 +14,8 @@ This mobile app  allows users to create, view, and manage tasks or items. This a
 
 ## Screenshots
 
-
+View with Android Studio Virtual Device Manager
 ![App Screenshot](./00_readme/screenshot_01.png)
-
-
 
 
 
@@ -36,13 +34,15 @@ Enjoy your stay, have a look at my other repositories and let's get in touch if 
 
 **IDE:** Visual Studio Code
 
+**Versioning:** Git, Github
 
-## Acknowledgements
 
+
+## ❤️ Acknowledgements
 
 
  Front End
- - [Pressfoto  for the picture ](https://fr.freepik.com/auteur/pressfoto)
+ - [Pressfoto  for the top picture ](https://fr.freepik.com/auteur/pressfoto)
 
 
 
