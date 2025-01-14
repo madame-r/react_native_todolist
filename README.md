@@ -22,9 +22,6 @@ View with Android Studio Virtual Device Manager
 
 
 
-## See it live ! 
-
-You can find the 'todolist.apk 'file in the 00_readme folder. Transfer it on your phone with a usb cable and try it.
 
 
 
